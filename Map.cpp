@@ -2,21 +2,33 @@
 #include "Map.h"
 
 
-Map::Map()
+GameMap::GameMap()
 {
 }
 
-void Map::Add(Habitación habitación)
+void GameMap::Add(Habitación habitación)
 {
 	_habitaciones++;
 	_mapa.insert(std::pair<int, Habitación>(_habitaciones, habitación));
 }
 
-void Map::Remove(Habitación habitación)
+void GameMap::Remove(Habitación habitación)
 {
 
 }
 
-Map::~Map()
+void GameMap::SetPlayerPos(int pos)
+{
+	_playerpos = &pos;
+}
+
+int GameMap::GetPlayerPos()
+{
+	return *_playerpos;
+}
+
+
+
+GameMap::~GameMap()
 {
 }

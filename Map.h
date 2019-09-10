@@ -4,18 +4,22 @@
 #include <set>
 #include <map>
 
-class Map
+class GameMap
 {
 public:
-	Map();
+	GameMap();
 	std::map <int, Habitación> _mapa;
 	std::set <Llave> _llaves;
 	std::set <Puerta> _puertas;
 	int _habitaciones = 0;
+	//int _playerpos = 0;
+	int *_playerpos;
+	//_playerpos = new int 
 
 	void Add(Habitación habitación);
 	void Remove(Habitación habitación);
-
-	~Map();
+	int GetPlayerPos();
+	void SetPlayerPos(int pos);
+	~GameMap();
 };
 
